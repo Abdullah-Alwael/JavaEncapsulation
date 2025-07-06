@@ -99,7 +99,12 @@ public class Main {
         System.out.println("Annual salary is: " + e2.getAnnualSalary() + "SAR");
         System.out.println(e2); // print the toString method
 
+        e3.setName(e3.getName()+"_10");
+        e3.setId(e3.getId()+"5");
+        e3.setSalary(7000+e3.getSalary());
         System.out.println(e3.getName() + " Annual salary is: " + e3.getAnnualSalary() + "SAR");
+        System.out.println("Raise 50% is: "+e3.raisedSalary(50)+"SAR");
+        System.out.println(e3);
 
         e4.raisedSalary(-100); // can not be negative
         e4.raisedSalary(0); // can not be zero
