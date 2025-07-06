@@ -121,7 +121,7 @@ public class Main {
         e5.setSalary(3500+e5.getSalary());
         System.out.println("Raising " + e5.getName() + "'s salary by 25%");
         System.out.println("The new salary will be: " + e5.raisedSalary(25)+"SAR");
-        System.out.println("He will get: "+e5.getAnnualSalary()+"SAR");
+        System.out.println("They will get: "+e5.getAnnualSalary()+"SAR");
         System.out.println(e5);
 
 
