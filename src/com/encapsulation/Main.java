@@ -18,29 +18,58 @@ public class Main {
         ac1.setBalance(80000); // no error message
         System.out.println(ac1.getName()+" with account number "+ac1.getId()+" has "+ ac1.getBalance()+"SAR");
         System.out.println("Debit 500 from "+ac1.getName()+", remaining is: "+ ac1.debit(500)+"SAR");
-        System.out.println("Adding 100 to account, the new balance is: "+ac1.credit(100));
-        System.out.println("Transferring 350 to another account, remaining: "+ac1.transferTo(ac4, 350));
+        System.out.println("Adding 100 to account, the new balance is: "+ac1.credit(100)+"SAR");
+        System.out.println("Transferring 350 to another account, remaining: "+ac1.transferTo(ac4, 350)+"SAR");
         System.out.println(ac1);
 
+        ac2.setName("Ahmad");
+        ac2.setId("2100");
+        ac2.setBalance(4000+ac2.getBalance()); //4000 + 500
         ac2.debit(1000); // can not remove more than what is available
         ac2.debit(0); // can not take 0 amounts out from ATMs
         ac2.debit(400); // no errors
-        // 100 remaining
         System.out.println(ac2.getName()+" with account number "+ac2.getId()+" has "+ ac2.getBalance()+"SAR");
-        System.out.println("your remaining balance is: "+ac2.debit(100)+"SAR"); // can take out all his money
+        System.out.println("your remaining balance is: "+ac2.debit(100)+"SAR");
+        ac2.credit(600);
+        ac2.credit(800);
+        System.out.println("Transferring 5000 from"+ac2.getName()+", remaining:"+ac2.transferTo(ac3, 5000)+"SAR");
+        System.out.println(ac2);
 
-        ac3.setId("6000"); // change id to new one
+        ac3.setId("3600"); // change id to new one
+        ac3.setName("Mahmood");
+        ac3.setBalance(950+ac3.getBalance());
+        System.out.println("Welcome "+ac3.getName()+", your ID is "+ ac3.getId());
+        ac3.credit(6000700); // trying big amounts
+        ac3.debit(5000000);
+        ac3.transferTo(ac5, 3000000);
         System.out.println(ac3); // prints the toString method
 
         ac4.setName("Yahya"); // change the name of owner for the 4th account
+        ac4.setId("4200");
+        ac4.setBalance(50+ac4.getBalance()); // 50+0
         ac4.credit(-5000); // negative numbers are not accepted
         ac4.credit(0); // can not add 0 amounts to the bank
         System.out.println(ac4.getName()+", Your new balance is "+ac4.credit(5000)+"SAR");; // no errors
+        System.out.println("Your account number is: "+ac4.getId());
+        ac4.debit(4050);
+        ac4.transferTo(ac5,1000);
+        System.out.println(ac4);
 
         ac5.transferTo(ac2,-5000); //can not transfer negative amount
         ac5.transferTo(ac2, 0); // can not transfer 0 amounts
         ac5.transferTo(ac2, 500000); // can not transfer more than available
-        System.out.println("Your remaining balance is "+ac5.transferTo(ac2, 50000)+"SAR");
+        System.out.println("account with ID: "+ac5.getId()+"'s remaining balance  after transfer is "
+                +ac5.transferTo(ac2, 50000)+"SAR");
+        ac5.setName(ac5.getName()+"_2");
+        ac5.setId("5500");
+        ac5.setBalance(800+ac5.getBalance());
+        ac5.credit(400);
+        ac5.credit(50);
+        ac5.debit(50000);
+        System.out.println("Your remaining balance is: "+ac5.getBalance()+"SAR");
+        System.out.println(ac5);
+
+
 
         // -------------------------------------------------------------------------------------------------------
         // Employees
