@@ -12,9 +12,15 @@ public class Main {
         Account ac4 = new Account("4000", "Yasser");
         Account ac5 = new Account("5000", "Mukhtar", 100000);
 
+        ac1.setName("Abdullah");
+        ac1.setId("1100");
         ac1.setBalance(-500); // an error message shows when the amount is negative
         ac1.setBalance(80000); // no error message
         System.out.println(ac1.getName()+" with account number "+ac1.getId()+" has "+ ac1.getBalance()+"SAR");
+        System.out.println("Debit 500 from "+ac1.getName()+", remaining is: "+ ac1.debit(500)+"SAR");
+        System.out.println("Adding 100 to account, the new balance is: "+ac1.credit(100));
+        System.out.println("Transferring 350 to another account, remaining: "+ac1.transferTo(ac4, 350));
+        System.out.println(ac1);
 
         ac2.debit(1000); // can not remove more than what is available
         ac2.debit(0); // can not take 0 amounts out from ATMs
