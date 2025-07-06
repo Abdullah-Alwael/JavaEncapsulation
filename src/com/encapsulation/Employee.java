@@ -55,7 +55,7 @@ public class Employee {
 
     public String toString() { // return the details
         return "Employee name: " + name +
-                ", with ID" + id +
+                ", with ID " + id +
                 " Has this amount of salary: " + salary + "SAR"+
                 " which is "+getAnnualSalary()+"SAR Annually";
     }
