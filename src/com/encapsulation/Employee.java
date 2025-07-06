@@ -5,21 +5,21 @@ public class Employee {
     private String name;
     private int salary;
 
-    public Employee(String id, String name, int salary){
-        this.id=id;
-        this.name=name;
-        this.salary=salary;
+    public Employee(String id, String name, int salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public int getSalary(){
+    public int getSalary() {
         return salary;
     }
 
@@ -32,7 +32,7 @@ public class Employee {
     }
 
     public void setSalary(int salary) {
-        if (salary>=0){
+        if (salary >= 0) {
             this.salary = salary;
         } else {
             System.out.println("He can not work while also providing you his money!");
@@ -40,20 +40,20 @@ public class Employee {
         }
     }
 
-    public int getAnnualSalary(){
-        return salary*12; // 12 months
+    public int getAnnualSalary() {
+        return salary * 12; // 12 months
     }
 
-    public int raisedSalary(int percent){
-        if (percent >0){
-            salary+=(salary*(percent/100));
+    public int raisedSalary(int percent) {
+        if (percent > 0) {
+            salary += (salary * (percent / 100));
         }
         return salary;
     }
 
-    public String toString(){ // return the details
-        return "Employee name: "+name+
-                ", with ID"+id+
-                " Has this amount of salary: "+salary+"SAR";
+    public String toString() { // return the details
+        return "Employee name: " + name +
+                ", with ID" + id +
+                " Has this amount of salary: " + salary + "SAR";
     }
 }

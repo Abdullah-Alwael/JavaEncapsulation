@@ -5,16 +5,16 @@ public class Account {
     private String name;
     private int balance;
 
-    public Account(String id, String name){
+    public Account(String id, String name) {
         balance = 0;
-        this.id=id;
-        this.name=name;
+        this.id = id;
+        this.name = name;
     }
 
-    public Account(String id, String name, int balance){
-        this.id=id;
-        this.name=name;
-        this.balance=balance;
+    public Account(String id, String name, int balance) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
     }
 
     public String getId() {
@@ -38,16 +38,16 @@ public class Account {
     }
 
     public void setBalance(int balance) {
-        if (balance >=0){
+        if (balance >= 0) {
             this.balance = balance;
         } else {
             System.out.println("Balance can not be negative");
         }
     }
 
-    public int credit(int amount){ // add to account
-        if (amount >0){
-            balance+=amount;
+    public int credit(int amount) { // add to account
+        if (amount > 0) {
+            balance += amount;
         } else {
             System.out.println("The amount can not be zero or negative");
         }
@@ -55,11 +55,11 @@ public class Account {
         return balance;
     }
 
-    public int debit(int amount){ // remove from account
-        if (amount <=0){
+    public int debit(int amount) { // remove from account
+        if (amount <= 0) {
             System.out.println("The amount can not be zero or negative");
-        } else if ((balance-amount)>=0){ // check if the balance is capable of the deduction
-            balance-=amount;
+        } else if ((balance - amount) >= 0) { // check if the balance is capable of the deduction
+            balance -= amount;
         } else {
             System.out.println("Not enough balance");
         }
@@ -67,14 +67,14 @@ public class Account {
         return balance;
     }
 
-    public int transferTo(Account another, int amount){
-        if (amount <=0){
+    public int transferTo(Account another, int amount) {
+        if (amount <= 0) {
             System.out.println("The amount can not be zero or negative");
-        } else if ((balance-amount)>=0){ // check if the balance is capable of the deduction
-            balance-=amount;
-            int anotherBalance = another.credit(amount);
+        } else if ((balance - amount) >= 0) { // check if the balance is capable of the deduction
+            balance -= amount;
+            int anotherNewBalance = another.credit(amount);
 //            System.out.println("your friend has this much balance:");
-//            System.out.println(anotherBalance);
+//            System.out.println(anotherNewBalance);
         } else {
             System.out.println("Not enough balance");
         }
@@ -82,8 +82,8 @@ public class Account {
         return balance;
     }
 
-    public String toString(){ // print everything about the object
-        return "Hello "+name+", your account with ID:"+id+
-                " has this much balance: "+balance+"SAR";
+    public String toString() { // print everything about the object
+        return "Hello " + name + ", your account with ID:" + id +
+                " has this much balance: " + balance + "SAR";
     }
 }
