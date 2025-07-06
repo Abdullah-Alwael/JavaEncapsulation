@@ -6,9 +6,9 @@ public class Employee {
     private int salary;
 
     public Employee(String id, String name, int salary) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
+        this.setId(id);
+        this.setName(name);
+        this.setSalary(salary);
     }
 
     public String getId() {
@@ -47,6 +47,8 @@ public class Employee {
     public int raisedSalary(int percent) {
         if (percent > 0) {
             salary += (salary * (percent / 100));
+        } else {
+            System.out.println("The percentage can not be negative or zero");
         }
         return salary;
     }

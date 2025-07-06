@@ -43,5 +43,13 @@ public class Main {
         // Employees
         // create 5 objects
 
+        Employee e1 = new Employee("10","Ahmed",21631);
+        Employee e2 = new Employee("20","Mohammed", 16070);
+        Employee e3 = new Employee("30", "Khalid", 14980);
+        Employee e4 = new Employee("40", "Raghad", 17030);
+        Employee e5 = new Employee("50", "Khulood", 22603);
+
+
+
     }
 }

@@ -7,14 +7,14 @@ public class Account {
 
     public Account(String id, String name) {
         balance = 0;
-        this.id = id;
-        this.name = name;
+        this.setId(id);
+        this.setName(name);
     }
 
     public Account(String id, String name, int balance) {
-        this.id = id;
-        this.name = name;
-        this.balance = balance;
+        this.setId(id);
+        this.setName(name);
+        this.setBalance(balance);
     }
 
     public String getId() {
