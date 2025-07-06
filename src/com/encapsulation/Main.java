@@ -69,6 +69,7 @@ public class Main {
         System.out.println("Your remaining balance is: " + ac5.getBalance() + "SAR");
         System.out.println(ac5);
 
+        System.out.println();
 
         // -------------------------------------------------------------------------------------------------------
         // Employees
