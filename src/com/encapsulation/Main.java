@@ -12,7 +12,6 @@ public class Main {
         Account ac4 = new Account("4000", "Yasser");
         Account ac5 = new Account("5000", "Mukhtar", 100000);
 
-
         ac1.setBalance(-500); // an error message shows when the amount is negative
         ac1.setBalance(80000); // no error message
         System.out.println(ac1.getName()+" with account number "+ac1.getId()+" has "+ ac1.getBalance()+"SAR");
@@ -23,7 +22,6 @@ public class Main {
         // 100 remaining
         System.out.println(ac2.getName()+" with account number "+ac2.getId()+" has "+ ac2.getBalance()+"SAR");
         System.out.println("your remaining balance is: "+ac2.debit(100)+"SAR"); // can take out all his money
-
 
         ac3.setId("6000"); // change id to new one
         System.out.println(ac3); // prints the toString method
@@ -38,7 +36,6 @@ public class Main {
         ac5.transferTo(ac2, 500000); // can not transfer more than available
         System.out.println("Your remaining balance is "+ac5.transferTo(ac2, 50000)+"SAR");
 
-
         // -------------------------------------------------------------------------------------------------------
         // Employees
         // create 5 objects
@@ -49,6 +46,23 @@ public class Main {
         Employee e4 = new Employee("40", "Raghad", 17030);
         Employee e5 = new Employee("50", "Khulood", 22603);
 
+        System.out.println("Employee "+e1.getName()+" has ID of: "+e1.getId()+" and his salary is: "+e1.getSalary());
+
+        e2.setId("60");
+        e2.setName("Mahmood");
+        e2.setSalary(-600); // can't live
+        e2.setSalary(0); // can have zero salary, if he is a trainee i.e. co-op.
+        e2.setSalary(15370); // no errors
+
+        System.out.println(e2); // print the toString method
+
+        System.out.println(e3.getName()+" Annual salary is: "+e3.getAnnualSalary()+"SAR");
+
+        e4.raisedSalary(-100); // can not be negative
+        e4.raisedSalary(0); // can not be zero
+
+        System.out.println("Raising "+e5.getName()+"'s salary by 25%");
+        System.out.println("The new salary will be: "+e5.raisedSalary(25));
 
 
     }
