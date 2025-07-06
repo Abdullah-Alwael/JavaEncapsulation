@@ -108,6 +108,12 @@ public class Main {
 
         e4.raisedSalary(-100); // can not be negative
         e4.raisedSalary(0); // can not be zero
+        e4.raisedSalary(11);
+        e4.setName(e4.getName()+"_new");
+        e4.setSalary(5600+e4.getSalary());
+        e4.setId(e4.getId()+10); // string concatenation
+        System.out.println(e4.getId()+" Account holder "+e4.getName()+" has "+e4.getAnnualSalary()+"SAR annually");
+        System.out.println(e4);
 
         System.out.println("Raising " + e5.getName() + "'s salary by 25%");
         System.out.println("The new salary will be: " + e5.raisedSalary(25));
